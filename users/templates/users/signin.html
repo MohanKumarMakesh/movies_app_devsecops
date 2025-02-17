@@ -1,10 +1,16 @@
-<form method="POST">
-    {% csrf_token%}
+{% extends "movies/base_generic.html" %}
+
+{% block content %}
+<form method ="POST">
+    {% csrf_token %}
     {{form.as_p}}
     <div>
         <button type="submit">Sign In</button>
-        <p></p>
     </div>
-        If you don't have an account yet
-        <a href="{% url 'users:sign_up'%}"> Sign Up</a>
+    <p></p>
+    <div>
+        If you dont have an account yet
+        <a href="{% url 'users:sign_up' %}">Sign Up</a>
+    </div>
 </form>
+{% endblock content %}

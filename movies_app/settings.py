@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7pq!w2a+2opxc6b=&p1!6-cmfg$s*+7e&adic$uva-mmp9)d_=
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS=['https://eu-west-1*', 'https://www.eu-west-1*', 'https://968157003e5243d898fb5877f6b76f6d.vfs.cloud9.eu-west-1.amazonaws.com','https://www.968157003e5243d898fb5877f6b76f6d.vfs.cloud9.eu-west-1.amazonaws.com']
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies.apps.MoviesConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'

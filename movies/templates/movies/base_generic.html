@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`</title>
+        
+    </head>
+    <body>
+        <<header>
+            <div class="topnav">
+                <a class=" active" href="/"> | 
+                {% if user.is_authenticated%}
+                <div> You are signed in as {{user.username}}...
+                <a href="{% url 'sign_out'%}">Sign out</a>
+                {% else%}
+                <a href="{% url 'sign_in'%}">Sign in</a>
+                <a href="{%url 'users:sign_up' %}">Sign up</a>
+                {% endif %}
+                </div>
+                </a>
+            </div>
+        </header>
+        <main>
+            {% block content%}{%endblock%}
+        </main>
+    </body>
+</html>
