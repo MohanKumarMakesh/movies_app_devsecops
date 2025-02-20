@@ -14,8 +14,7 @@ class UserSignUpForm(UserCreationForm):
     message_ht_max= f"should have at most {max_length} characters"
     first_name=forms.CharField(validators=[validators.MinLengthValidator(min_length, message_lt_min),
     validators.MaxLengthValidator(max_length, message_ht_max), validators.RegexValidator(name_regex,regex_msg)])
-    last_name=forms.CharField(validators=[validators.MinLengthValidator(min_length, message_lt_min),
-    (max_length,message_ht_max),validators.RegexValidator(name_regex,regex_msg)])
+    last_name=forms.CharField(validators=[validators.MinLengthValidator(min_length, message_lt_min),validators.MaxLengthValidator(max_length,message_ht_max),validators.RegexValidator(name_regex,regex_msg)])
     
     
 class Meta:
